@@ -1,0 +1,361 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "shell-unix",
+  "description": "只允许执行白名单里的安装与检测命令（macOS / Linux），每条命令的参数写死",
+  "windows": [
+    "main"
+  ],
+  "platforms": [
+    "macOS",
+    "linux"
+  ],
+  "permissions": [
+    {
+      "identifier": "shell:allow-execute",
+      "allow": [
+        {
+          "name": "u.has.node",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v node >/dev/null && node --version"
+          ]
+        },
+        {
+          "name": "u.has.git",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v git >/dev/null && git --version"
+          ]
+        },
+        {
+          "name": "u.has.npm",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v npm >/dev/null && npm --version"
+          ]
+        },
+        {
+          "name": "u.has.brew",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v brew >/dev/null && brew --version"
+          ]
+        },
+        {
+          "name": "u.has.claude",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v claude"
+          ]
+        },
+        {
+          "name": "u.ver.claude",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; claude --version"
+          ]
+        },
+        {
+          "name": "u.has.codex",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v codex"
+          ]
+        },
+        {
+          "name": "u.ver.codex",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; codex --version"
+          ]
+        },
+        {
+          "name": "u.has.openclaw",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v openclaw"
+          ]
+        },
+        {
+          "name": "u.ver.openclaw",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; openclaw --version"
+          ]
+        },
+        {
+          "name": "u.has.hermes",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v hermes"
+          ]
+        },
+        {
+          "name": "u.ver.hermes",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; hermes --version"
+          ]
+        },
+        {
+          "name": "u.arch",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; uname -m"
+          ]
+        },
+        {
+          "name": "u.install.claude.native",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; curl -fsSL https://claude.ai/install.sh | bash"
+          ]
+        },
+        {
+          "name": "u.install.claude.brew",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; brew install --cask claude-code"
+          ]
+        },
+        {
+          "name": "u.install.claude.npm",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; npm install -g @anthropic-ai/claude-code"
+          ]
+        },
+        {
+          "name": "u.install.codex.native",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; curl -fsSL https://chatgpt.com/codex/install.sh | sh"
+          ]
+        },
+        {
+          "name": "u.install.codex.npm",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; npm install -g @openai/codex"
+          ]
+        },
+        {
+          "name": "u.install.codex.brew",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; brew install --cask codex"
+          ]
+        },
+        {
+          "name": "u.install.openclaw.native",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; curl -fsSL https://openclaw.ai/install.sh | bash"
+          ]
+        },
+        {
+          "name": "u.install.hermes.native",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "shell:allow-spawn",
+      "allow": [
+        {
+          "name": "u.has.node",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v node >/dev/null && node --version"
+          ]
+        },
+        {
+          "name": "u.has.git",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v git >/dev/null && git --version"
+          ]
+        },
+        {
+          "name": "u.has.npm",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v npm >/dev/null && npm --version"
+          ]
+        },
+        {
+          "name": "u.has.brew",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v brew >/dev/null && brew --version"
+          ]
+        },
+        {
+          "name": "u.has.claude",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v claude"
+          ]
+        },
+        {
+          "name": "u.ver.claude",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; claude --version"
+          ]
+        },
+        {
+          "name": "u.has.codex",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v codex"
+          ]
+        },
+        {
+          "name": "u.ver.codex",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; codex --version"
+          ]
+        },
+        {
+          "name": "u.has.openclaw",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v openclaw"
+          ]
+        },
+        {
+          "name": "u.ver.openclaw",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; openclaw --version"
+          ]
+        },
+        {
+          "name": "u.has.hermes",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v hermes"
+          ]
+        },
+        {
+          "name": "u.ver.hermes",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; hermes --version"
+          ]
+        },
+        {
+          "name": "u.arch",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; uname -m"
+          ]
+        },
+        {
+          "name": "u.install.claude.native",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; curl -fsSL https://claude.ai/install.sh | bash"
+          ]
+        },
+        {
+          "name": "u.install.claude.brew",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; brew install --cask claude-code"
+          ]
+        },
+        {
+          "name": "u.install.claude.npm",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; npm install -g @anthropic-ai/claude-code"
+          ]
+        },
+        {
+          "name": "u.install.codex.native",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; curl -fsSL https://chatgpt.com/codex/install.sh | sh"
+          ]
+        },
+        {
+          "name": "u.install.codex.npm",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; npm install -g @openai/codex"
+          ]
+        },
+        {
+          "name": "u.install.codex.brew",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; brew install --cask codex"
+          ]
+        },
+        {
+          "name": "u.install.openclaw.native",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; curl -fsSL https://openclaw.ai/install.sh | bash"
+          ]
+        },
+        {
+          "name": "u.install.hermes.native",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash"
+          ]
+        }
+      ]
+    },
+    "shell:allow-kill"
+  ]
+}

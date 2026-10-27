@@ -1,0 +1,8 @@
+【示例】每行一条报错文字，复制进「大模型翻译」前可用来对照识别结果；全部为虚构内容。
+curl: (6) Could not resolve host: claude.ai
+bash: line 1: syntax error near unexpected token `<'
+npm ERR! code EACCES
+npm WARN EBADENGINE Unsupported engine
+zsh: command not found: claude
+File cannot be loaded because running scripts is disabled on this system.
+tar: write error: No space left on device

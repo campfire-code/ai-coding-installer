@@ -1,0 +1,46 @@
+/* AI 编程工具一键安装器：只用 kit.css 的变量，适配 6 套布局与亮暗色 */
+.ai { flex: 1; display: flex; flex-direction: column; gap: 12px; min-width: 0; container-type: inline-size; }
+.ai-demo { padding: 6px 12px; border-radius: min(var(--radius), 10px); background: var(--warn-soft); color: var(--warn); font-size: .93em; font-weight: 500; }
+.ai-cols { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 14px; align-items: start; }
+@container (max-width: 760px) { .ai-cols { grid-template-columns: 1fr; } }
+.ai-h { margin: 0; font-size: 1.05em; font-weight: 650; }
+.ai-tools, .ai-side { display: grid; gap: 10px; min-width: 0; }
+.ai-tools > .ai-h { padding-bottom: 2px; }
+.ai-card, .ai-out, .ai-tool { border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); padding: 10px 12px; min-width: 0; }
+.ai-card { display: grid; gap: 10px; }
+.ai-card-hd { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.ai-tool { display: grid; gap: 6px; transition: border-color .18s var(--ease); }
+.ai-tool.installing { border-color: var(--primary); }
+.ai-tool.fail { border-color: var(--err); }
+.ai-tool-hd { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.ai-tool p { margin: 0; color: var(--muted); font-size: .95em; }
+.ai-tool-ft { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ai-sel { width: auto; flex: 1; min-width: 150px; }
+.ai-one { flex: 1; color: var(--muted); }
+.ai-spin { animation: ai-rot 1s linear infinite; }
+@keyframes ai-rot { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .ai-spin { animation: none; } }
+.ai-env { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+.ai-env li { display: flex; justify-content: space-between; gap: 8px; padding: 3px 0; border-bottom: 1px dashed var(--line); }
+.ai-env span { color: var(--muted); }
+.ai-env b.ok { color: var(--ok); } .ai-env b.no { color: var(--err); }
+.ai-net { display: flex; flex-wrap: wrap; gap: 6px; }
+.ai-pill { display: inline-flex; align-items: center; gap: 4px; font-size: .86em; padding: 2px 8px; border-radius: 999px; }
+.ai-pill.ok { background: var(--ok-soft); color: var(--ok); } .ai-pill.no { background: var(--err-soft); color: var(--err); }
+.ai-missing { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.ai-missing li { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 4px 10px; border-radius: min(var(--radius), 10px); background: var(--warn-soft); color: var(--warn); }
+.ai-f { display: grid; gap: 4px; }
+.ai-f > span:first-child { font-size: .93em; color: var(--muted); }
+.ai-key { display: flex; gap: 4px; }
+.ai-note { margin: 0; font-size: .9em; color: var(--muted); }
+.ai-note code { background: var(--chip); padding: 1px 6px; border-radius: 4px; }
+.ai-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.ai-out { display: grid; gap: 8px; }
+.ai-log { margin: 0; max-height: 110px; min-height: 80px; overflow: auto; padding: 10px 12px; border-radius: min(var(--radius), 10px); background: var(--chip); color: var(--ink); font: 12px/1.55 ui-monospace, "SF Mono", Menlo, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ai-issue { display: grid; gap: 8px; padding: 10px 12px; border-radius: min(var(--radius), 10px); border-left: 4px solid var(--warn); background: var(--warn-soft); }
+.ai-issue.error, .ai-issue.blocker { border-left-color: var(--err); background: var(--err-soft); }
+.ai-issue p { margin: 2px 0 0; }
+.ai-ai { padding: 8px 10px; border-radius: min(var(--radius), 10px); background: var(--surface); white-space: pre-wrap; }
+.ai-ai.err { color: var(--err); }
+.ai-env li:first-child { grid-column: 1 / -1; }
+.ai-env span { white-space: nowrap; }

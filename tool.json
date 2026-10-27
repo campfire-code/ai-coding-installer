@@ -1,0 +1,13 @@
+{
+  "id": "a07",
+  "slug": "ai-coding-installer",
+  "name": "AI 编程工具一键安装器",
+  "version": "0.1.0",
+  "repo": "campfire-code/ai-coding-installer",
+  "license": "MIT",
+  "ui": {
+    "layout": "a",
+    "palette": "teal"
+  },
+  "upstream": null
+}

@@ -1,0 +1,397 @@
+[
+  {
+    "id": "u.has.node",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v node >/dev/null && node --version"
+    ]
+  },
+  {
+    "id": "u.has.git",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v git >/dev/null && git --version"
+    ]
+  },
+  {
+    "id": "u.has.npm",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v npm >/dev/null && npm --version"
+    ]
+  },
+  {
+    "id": "u.has.brew",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v brew >/dev/null && brew --version"
+    ]
+  },
+  {
+    "id": "u.has.claude",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v claude"
+    ]
+  },
+  {
+    "id": "u.ver.claude",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; claude --version"
+    ]
+  },
+  {
+    "id": "u.has.codex",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v codex"
+    ]
+  },
+  {
+    "id": "u.ver.codex",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; codex --version"
+    ]
+  },
+  {
+    "id": "u.has.openclaw",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v openclaw"
+    ]
+  },
+  {
+    "id": "u.ver.openclaw",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; openclaw --version"
+    ]
+  },
+  {
+    "id": "u.has.hermes",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; command -v hermes"
+    ]
+  },
+  {
+    "id": "u.ver.hermes",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; hermes --version"
+    ]
+  },
+  {
+    "id": "u.arch",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; uname -m"
+    ]
+  },
+  {
+    "id": "w.has.node",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "node",
+      "--version"
+    ]
+  },
+  {
+    "id": "w.has.git",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "git",
+      "--version"
+    ]
+  },
+  {
+    "id": "w.has.npm",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "npm",
+      "--version"
+    ]
+  },
+  {
+    "id": "w.has.claude",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "where",
+      "claude"
+    ]
+  },
+  {
+    "id": "w.ver.claude",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "claude",
+      "--version"
+    ]
+  },
+  {
+    "id": "w.has.codex",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "where",
+      "codex"
+    ]
+  },
+  {
+    "id": "w.ver.codex",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "codex",
+      "--version"
+    ]
+  },
+  {
+    "id": "w.has.openclaw",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "where",
+      "openclaw"
+    ]
+  },
+  {
+    "id": "w.ver.openclaw",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "openclaw",
+      "--version"
+    ]
+  },
+  {
+    "id": "w.has.hermes",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "where",
+      "hermes"
+    ]
+  },
+  {
+    "id": "w.ver.hermes",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "hermes",
+      "--version"
+    ]
+  },
+  {
+    "id": "w.arch",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "echo",
+      "%PROCESSOR_ARCHITECTURE%"
+    ]
+  },
+  {
+    "id": "u.install.claude.native",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; curl -fsSL https://claude.ai/install.sh | bash"
+    ]
+  },
+  {
+    "id": "u.install.claude.brew",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; brew install --cask claude-code"
+    ]
+  },
+  {
+    "id": "u.install.claude.npm",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; npm install -g @anthropic-ai/claude-code"
+    ]
+  },
+  {
+    "id": "u.install.codex.native",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; curl -fsSL https://chatgpt.com/codex/install.sh | sh"
+    ]
+  },
+  {
+    "id": "u.install.codex.npm",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; npm install -g @openai/codex"
+    ]
+  },
+  {
+    "id": "u.install.codex.brew",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; brew install --cask codex"
+    ]
+  },
+  {
+    "id": "u.install.openclaw.native",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; curl -fsSL https://openclaw.ai/install.sh | bash"
+    ]
+  },
+  {
+    "id": "u.install.hermes.native",
+    "platform": "unix",
+    "cmd": "sh",
+    "args": [
+      "-c",
+      "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash"
+    ]
+  },
+  {
+    "id": "w.install.claude.native",
+    "platform": "win",
+    "cmd": "powershell",
+    "args": [
+      "-NoProfile",
+      "-Command",
+      "irm https://claude.ai/install.ps1 | iex"
+    ]
+  },
+  {
+    "id": "w.install.claude.npm",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "npm",
+      "install",
+      "-g",
+      "@anthropic-ai/claude-code"
+    ]
+  },
+  {
+    "id": "w.install.claude.winget",
+    "platform": "win",
+    "cmd": "powershell",
+    "args": [
+      "-NoProfile",
+      "-Command",
+      "winget install Anthropic.ClaudeCode"
+    ]
+  },
+  {
+    "id": "w.install.codex.native",
+    "platform": "win",
+    "cmd": "powershell",
+    "args": [
+      "-ExecutionPolicy",
+      "ByPass",
+      "-c",
+      "irm https://chatgpt.com/codex/install.ps1 | iex"
+    ]
+  },
+  {
+    "id": "w.install.codex.npm",
+    "platform": "win",
+    "cmd": "cmd",
+    "args": [
+      "/c",
+      "npm",
+      "install",
+      "-g",
+      "@openai/codex"
+    ]
+  },
+  {
+    "id": "w.install.openclaw.native",
+    "platform": "win",
+    "cmd": "powershell",
+    "args": [
+      "-NoProfile",
+      "-Command",
+      "iwr -useb https://openclaw.ai/install.ps1 | iex"
+    ]
+  },
+  {
+    "id": "w.install.hermes.native",
+    "platform": "win",
+    "cmd": "powershell",
+    "args": [
+      "-NoProfile",
+      "-Command",
+      "iex (irm https://hermes-agent.nousresearch.com/install.ps1)"
+    ]
+  },
+  {
+    "id": "w.setenv.codex",
+    "platform": "win",
+    "cmd": "setx",
+    "args": [
+      "CAMPFIRE_CODEX_API_KEY",
+      {
+        "validator": "^[A-Za-z0-9._~+/=:-]{8,512}$"
+      }
+    ]
+  }
+]

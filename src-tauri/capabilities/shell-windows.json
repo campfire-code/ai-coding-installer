@@ -1,0 +1,396 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "shell-windows",
+  "description": "只允许执行白名单里的安装与检测命令（Windows），每条命令的参数写死；仅 setx 的取值受正则限制",
+  "windows": [
+    "main"
+  ],
+  "platforms": [
+    "windows"
+  ],
+  "permissions": [
+    {
+      "identifier": "shell:allow-execute",
+      "allow": [
+        {
+          "name": "w.has.node",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "node",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.has.git",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "git",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.has.npm",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "npm",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.has.claude",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "where",
+            "claude"
+          ]
+        },
+        {
+          "name": "w.ver.claude",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "claude",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.has.codex",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "where",
+            "codex"
+          ]
+        },
+        {
+          "name": "w.ver.codex",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "codex",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.has.openclaw",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "where",
+            "openclaw"
+          ]
+        },
+        {
+          "name": "w.ver.openclaw",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "openclaw",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.has.hermes",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "where",
+            "hermes"
+          ]
+        },
+        {
+          "name": "w.ver.hermes",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "hermes",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.arch",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "echo",
+            "%PROCESSOR_ARCHITECTURE%"
+          ]
+        },
+        {
+          "name": "w.install.claude.native",
+          "cmd": "powershell",
+          "args": [
+            "-NoProfile",
+            "-Command",
+            "irm https://claude.ai/install.ps1 | iex"
+          ]
+        },
+        {
+          "name": "w.install.claude.npm",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "npm",
+            "install",
+            "-g",
+            "@anthropic-ai/claude-code"
+          ]
+        },
+        {
+          "name": "w.install.claude.winget",
+          "cmd": "powershell",
+          "args": [
+            "-NoProfile",
+            "-Command",
+            "winget install Anthropic.ClaudeCode"
+          ]
+        },
+        {
+          "name": "w.install.codex.native",
+          "cmd": "powershell",
+          "args": [
+            "-ExecutionPolicy",
+            "ByPass",
+            "-c",
+            "irm https://chatgpt.com/codex/install.ps1 | iex"
+          ]
+        },
+        {
+          "name": "w.install.codex.npm",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "npm",
+            "install",
+            "-g",
+            "@openai/codex"
+          ]
+        },
+        {
+          "name": "w.install.openclaw.native",
+          "cmd": "powershell",
+          "args": [
+            "-NoProfile",
+            "-Command",
+            "iwr -useb https://openclaw.ai/install.ps1 | iex"
+          ]
+        },
+        {
+          "name": "w.install.hermes.native",
+          "cmd": "powershell",
+          "args": [
+            "-NoProfile",
+            "-Command",
+            "iex (irm https://hermes-agent.nousresearch.com/install.ps1)"
+          ]
+        },
+        {
+          "name": "w.setenv.codex",
+          "cmd": "setx",
+          "args": [
+            "CAMPFIRE_CODEX_API_KEY",
+            {
+              "validator": "^[A-Za-z0-9._~+/=:-]{8,512}$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "shell:allow-spawn",
+      "allow": [
+        {
+          "name": "w.has.node",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "node",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.has.git",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "git",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.has.npm",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "npm",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.has.claude",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "where",
+            "claude"
+          ]
+        },
+        {
+          "name": "w.ver.claude",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "claude",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.has.codex",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "where",
+            "codex"
+          ]
+        },
+        {
+          "name": "w.ver.codex",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "codex",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.has.openclaw",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "where",
+            "openclaw"
+          ]
+        },
+        {
+          "name": "w.ver.openclaw",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "openclaw",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.has.hermes",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "where",
+            "hermes"
+          ]
+        },
+        {
+          "name": "w.ver.hermes",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "hermes",
+            "--version"
+          ]
+        },
+        {
+          "name": "w.arch",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "echo",
+            "%PROCESSOR_ARCHITECTURE%"
+          ]
+        },
+        {
+          "name": "w.install.claude.native",
+          "cmd": "powershell",
+          "args": [
+            "-NoProfile",
+            "-Command",
+            "irm https://claude.ai/install.ps1 | iex"
+          ]
+        },
+        {
+          "name": "w.install.claude.npm",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "npm",
+            "install",
+            "-g",
+            "@anthropic-ai/claude-code"
+          ]
+        },
+        {
+          "name": "w.install.claude.winget",
+          "cmd": "powershell",
+          "args": [
+            "-NoProfile",
+            "-Command",
+            "winget install Anthropic.ClaudeCode"
+          ]
+        },
+        {
+          "name": "w.install.codex.native",
+          "cmd": "powershell",
+          "args": [
+            "-ExecutionPolicy",
+            "ByPass",
+            "-c",
+            "irm https://chatgpt.com/codex/install.ps1 | iex"
+          ]
+        },
+        {
+          "name": "w.install.codex.npm",
+          "cmd": "cmd",
+          "args": [
+            "/c",
+            "npm",
+            "install",
+            "-g",
+            "@openai/codex"
+          ]
+        },
+        {
+          "name": "w.install.openclaw.native",
+          "cmd": "powershell",
+          "args": [
+            "-NoProfile",
+            "-Command",
+            "iwr -useb https://openclaw.ai/install.ps1 | iex"
+          ]
+        },
+        {
+          "name": "w.install.hermes.native",
+          "cmd": "powershell",
+          "args": [
+            "-NoProfile",
+            "-Command",
+            "iex (irm https://hermes-agent.nousresearch.com/install.ps1)"
+          ]
+        },
+        {
+          "name": "w.setenv.codex",
+          "cmd": "setx",
+          "args": [
+            "CAMPFIRE_CODEX_API_KEY",
+            {
+              "validator": "^[A-Za-z0-9._~+/=:-]{8,512}$"
+            }
+          ]
+        }
+      ]
+    },
+    "shell:allow-kill"
+  ]
+}
